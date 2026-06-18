@@ -43,11 +43,14 @@ const RECIPIENT_LOOKUP = {
 const ADMIN_PASS = "MySecureAdminPass99!";
 
 // --------------------------
-// MODAL CONTROLS
+// MODAL CONTROLS — FIXED
 // --------------------------
 function openModal(type) {
   const modal = document.getElementById('mainModal');
-  if (!modal) return;
+  if (!modal) {
+    console.error("Modal element not found");
+    return;
+  }
   modal.style.display = 'block';
   document.body.style.overflow = 'hidden';
 
@@ -127,7 +130,7 @@ function loginUser() {
 }
 
 // --------------------------
-// DASHBOARD LOAD
+// DASHBOARD & OTHER FUNCTIONS
 // --------------------------
 window.addEventListener('load', function() {
   if (!window.location.pathname.includes('dashboard.html')) return;
@@ -141,9 +144,6 @@ window.addEventListener('load', function() {
   document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
 });
 
-// --------------------------
-// SEND / TRANSFER / OTHER ACTIONS
-// --------------------------
 function openSend() {
   document.getElementById('actionContent').innerHTML = `
     <h3>Send Money / Zelle</h3>
@@ -240,9 +240,6 @@ function openTransfer() { alert("💸 Pay & Transfer: Send, receive, or move mon
 function openPlans() { alert("📊 Plan & Track: View budgets, savings goals, and spending history."); }
 function openInvest() { alert("📈 Investments: Manage your investment portfolio and view market updates."); }
 
-// --------------------------
-// LOAN SYSTEM
-// --------------------------
 function submitLoanApplication() {
   const type = document.getElementById('loanType').value;
   const amount = parseFloat(document.getElementById('loanAmount').value);
@@ -274,9 +271,6 @@ function submitLoanApplication() {
   closeLoanModal();
 }
 
-// --------------------------
-// ADMIN PANEL
-// --------------------------
 function adminLogin() {
   const pass = document.getElementById('adminPass').value;
   if (pass !== ADMIN_PASS) return alert("⚠️ Wrong admin password!");
@@ -372,14 +366,13 @@ function logout() {
   window.location.href = "index.html";
 }
 
-// Close modal when clicking outside
 window.onclick = function(e) {
   if (e.target.classList.contains('modal')) closeModal();
 };
 
-// Extra functions for dashboard
-function closeActionModal() { document.getElementById('actionModal').style.display = 'none'; }
-function openLoanForm() { document.getElementById('loanModal').style.display = 'block'; document.body.style.overflow = 'hidden'; }
-function closeLoanModal() { document.getElementById('loanModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-function openAtmModal() { document.getElementById('atmModal').style.display = 'block'; document.body.style.overflow = 'hidden'; }
-function closeAtmModal() { document.getElementById('atmModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+function closeActionModal() { const m = document.getElementById('actionModal'); if(m) m.style.display = 'none'; }
+function openLoanForm() { const m = document.getElementById('loanModal'); if(m) { m.style.display = 'block'; document.body.style.overflow = 'hidden'; } }
+function closeLoanModal() { const m = document.getElementById('loanModal'); if(m) { m.style.display = 'none'; document.body.style.overflow = 'auto'; } }
+function openAtmModal() { const m = document.getElementById('atmModal'); if(m) { m.style.display = 'block'; document.body.style.overflow = 'hidden'; } }
+function closeAtmModal() { const m = document.getElementById('atmModal'); if(m) { m.style.display = 'none'; document.body.style.overflow = 'auto'; } }
+  
