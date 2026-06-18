@@ -42,11 +42,14 @@ const RECIPIENT_LOOKUP = {
 const ADMIN_PASS = "Admin1234"; // Change this to your own password
 
 // --------------------------
-// MODAL CONTROLS
+// MODAL CONTROLS — FIXED
 // --------------------------
 function openModal(type) {
   const modal = document.getElementById('mainModal');
+  if (!modal) return;
   modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+
   if(type === 'login') {
     document.getElementById('loginForm').style.display = 'block';
     document.getElementById('registerForm').style.display = 'none';
@@ -54,12 +57,15 @@ function openModal(type) {
     document.getElementById('loginForm').style.display = 'none';
     document.getElementById('registerForm').style.display = 'block';
   }
-  document.body.style.overflow = 'hidden';
 }
+
 function closeModal() {
-  document.getElementById('mainModal').style.display = 'none';
+  const modal = document.getElementById('mainModal');
+  if (!modal) return;
+  modal.style.display = 'none';
   document.body.style.overflow = 'auto';
 }
+
 function switchToReg() { openModal('register'); }
 function switchToLogin() { openModal('login'); }
 
@@ -367,5 +373,5 @@ function logout() {
 }
 
 window.onclick = function(e) {
-  if(e.target.classList.contains('modal')) e.target.style.display = 'none';
+  if(e.target.classList.contains('modal')) closeModal();
 }
