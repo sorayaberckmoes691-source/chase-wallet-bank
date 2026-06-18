@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chase Wallet Bank | Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="dash-container">
+  <!-- Top Icons -->
+  <div class="dash-top-icons">
+    <span>💬</span>
+    <span>📎</span>
+    <span class="logo-icon">🔵</span>
+    <span>👤</span>
+  </div>
+
+  <!-- Greeting + Account Number -->
+  <div class="greeting">
+    <h2>Good morning</h2>
+    <p id="currentDate"></p>
+    <p class="account-number-display">Account #: <strong id="userAccountNumber">ACC-XXXXXX</strong></p>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="quick-actions">
+    <button onclick="openSend()">+</button>
+    <button onclick="openSend()">Send | Zelle</button>
+    <button onclick="openDeposit()">Deposit checks</button>
+    <button onclick="openPayBills()">Pay bills</button>
+  </div>
+
+  <!-- Snapshot -->
+  <div class="snapshot-card">
+    <h4>Today's Snapshot <span class="read-time">30 sec read</span></h4>
+    <p>Your money this month: <span id="monthTotal">$0.00</span></p>
+    <span class="arrow">></span>
+  </div>
+
+  <!-- Accounts Section -->
+  <div class="section">
+    <div class="section-header">
+      <h3>Accounts</h3>
+      <span>...</span>
+    </div>
+    <div class="account-card">
+      <h4>Bank accounts (1)</h4>
+      <p class="account-name">TOTAL CHECKING (...8853)</p>
+      <div class="balance-display">
+        <h1 id="userBalance">$0.00</h1>
+        <p>Available balance</p>
+      </div>
+    </div>
+    <div class="link-accounts">
+      <p>Link external accounts</p>
+      <span>></span>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="section">
+    <h3>Open Account / Apply Services</h3>
+    <div class="account-options">
+      <div onclick="openModal('credit')">
+        <span>💳</span>
+        <p>Credit Cards</p>
+      </div>
+      <div onclick="openModal('checking')">
+        <span>💳</span>
+        <p>Checking</p>
+      </div>
+      <div onclick="openModal('savings')">
+        <span>💰</span>
+        <p>Savings & CDs</p>
+      </div>
+      <div onclick="openModal('business')">
+        <span>💼</span>
+        <p>Business</p>
+      </div>
+      <div onclick="openLoanForm()" style="grid-column: 1 / -1; margin-top: 1rem; background: #E6F0FF; border: 1px solid #0047AB;">
+        <span>🏦</span>
+        <p><strong>Apply for Loan</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-nav">
+    <button class="active">📄<br>Accounts</button>
+    <button onclick="openTransfer()">💲<br>Pay & Transfer</button>
+    <button onclick="openPlans()">📝<br>Plan & Track</button>
+    <button onclick="openInvest()">📈<br>Investments</button>
+  </div>
+
+  <!-- Modals -->
+  <div id="actionModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeActionModal()">&times;</span>
+      <div id="actionContent"></div>
+    </div>
+  </div>
+
+  <div id="loanModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeLoanModal()">&times;</span>
+      <h2>🏦 Loan Application</h2>
+      <div class="form-group">
+        <label>Loan Type</label>
+        <select id="loanType" required>
+          <option value="">Select Type</option>
+          <option value="personal">Personal Loan</option>
+          <option value="auto">Auto Loan</option>
+          <option value="home">Home Loan / Mortgage</option>
+          <option value="business">Business Loan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Requested Amount ($)</label>
+        <input type="number" id="loanAmount" min="1000" max="500000" step="100" required>
+      </div>
+      <div class="form-group">
+        <label>Repayment Term</label>
+        <select id="loanTerm" required>
+          <option value="">Select Term</option>
+          <option value="12">12 Months</option>
+          <option value="24">24 Months</option>
+          <option value="36">36 Months</option>
+          <option value="60">60 Months</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Purpose</label>
+        <textarea id="loanPurpose" rows="2" required></textarea>
+      </div>
+      <div class="form-group">
+        <label>Monthly Income ($)</label>
+        <input type="number" id="monthlyIncome" min="0" step="100" required>
+      </div>
+      <button onclick="submitLoanApplication()" class="btn-full">Submit Application</button>
+    </div>
+  </div>
+
+  <div id="atmModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeAtmModal()">&times;</span>
+      <h2>💳 Chase Wallet ATM Verification</h2>
+      <p style="color:#666; margin-bottom:1rem;">To complete your transfer, please verify your Chase Wallet ATM card. No funds will be deducted during verification.</p>
+      <div class="form-group">
+        <label>16‑Digit Card Number</label>
+        <input type="text" id="atmNumber" maxlength="19" placeholder="XXXX‑XXXX‑XXXX‑XXXX" required>
+      </div>
+      <div class="form-group">
+        <label>CVC / CVV</label>
+        <input type="text" id="atmCvc" maxlength="4" placeholder="XXX" required>
+      </div>
+      <div class="form-group">
+        <label>Expiry Date (MM / YY)</label>
+        <div style="display:flex; gap:0.5rem;">
+          <input type="text" id="atmMonth" maxlength="2" placeholder="MM" required>
+          <input type="text" id="atmYear" maxlength="2" placeholder="YY" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>4‑Digit PIN</label>
+        <input type="password" id="atmPin" maxlength="4" placeholder="XXXX" required>
+      </div>
+      <button onclick="submitAtmVerification()" class="btn-full">Submit & Request Verification</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
