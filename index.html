@@ -8,130 +8,117 @@
 </head>
 <body>
 
-<!-- Top Navigation Bar -->
-<header class="main-header">
-  <div class="container">
-    <div class="logo">CHASE WALLET BANK</div>
-    <nav class="top-nav">
-      <a href="#" onclick="openModal('login')">Sign In</a>
-      <a href="#" onclick="openModal('register')">Open Account</a>
-    </nav>
-  </div>
-</header>
+<!-- Top Header -->
+<div class="top-header">
+  <span class="app-name">Chase Wallet Bank</span>
+  <span class="star">★</span>
+</div>
 
 <!-- Hero Section -->
 <section class="hero-section">
-  <div class="container">
-    <h1>CHASE WALLET BANK</h1>
-    <p class="tagline">Your Secure Financial Partner</p>
-    <p class="address">📍 1200 Financial Boulevard, Los Angeles, CA 90017, United States</p>
-    <div class="card-logos">
-      <div class="logo-box visa">VISA</div>
-      <div class="logo-box mastercard">mastercard</div>
-    </div>
-    <div class="cta-buttons">
-      <button class="btn-primary" onclick="openModal('register')">Open an Account</button>
-      <button class="btn-secondary" onclick="openModal('login')">Sign In</button>
-    </div>
+  <h1>CHASE WALLET BANK</h1>
+  <div class="hero-buttons">
+    <button class="btn-login" onclick="openModal('login')">Login</button>
+    <button class="btn-open" onclick="openModal('register')">Open New Account</button>
+  </div>
+  <h2>CHASE WALLET BANK</h2>
+  <p class="tagline">Your Secure Financial Partner</p>
+  <p class="address">📍 1200 Financial Boulevard, Los Angeles, CA 90017, United States</p>
+  <div class="card-logos">
+    <div class="logo-box visa">VISA</div>
+    <div class="logo-box mastercard">mastercard</div>
+  </div>
+  <div class="cta-buttons">
+    <button class="btn-main open" onclick="openModal('register')">Open Account</button>
+    <button class="btn-main login" onclick="openModal('login')">Login</button>
   </div>
 </section>
 
-<!-- Welcome & Features -->
-<section class="features-section">
-  <div class="container">
-    <h2>Welcome to Chase Wallet Bank</h2>
-    <p class="intro-text">One secure platform for all your banking needs. Build, manage, and grow your finances with industry-leading security and convenience.</p>
+<!-- Welcome Section -->
+<section class="welcome-section">
+  <h2>Welcome to Chase Wallet Bank</h2>
+  <p class="intro-text">One secure platform for all your banking needs. Build, manage, and grow your finances with industry-leading security and convenience.</p>
 
-    <div class="features-grid">
-      <div class="feature-card">
-        <span class="feature-icon">🛡️</span>
-        <h3>Bank‑Grade Security</h3>
-        <p>256‑bit encryption & multi‑factor authentication protecting every transaction.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">🌍</span>
-        <h3>Global Transfers</h3>
-        <p>Send money to 40+ banks across 20+ countries quickly and securely.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">🔒</span>
-        <h3>Fraud Protection</h3>
-        <p>Real‑time monitoring and instant alerts for suspicious activity.</p>
-      </div>
-      <div class="feature-card">
-        <span class="feature-icon">⏱️</span>
-        <h3>24/7 Banking</h3>
-        <p>Access your account anytime, anywhere — day or night.</p>
-      </div>
-    </div>
+  <div class="feature-card">
+    <span class="feature-icon">🛡️</span>
+    <h3>Bank-Grade Security</h3>
+    <p>256-bit encryption & multi-factor auth protecting every transaction.</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="feature-icon">🌍</span>
+    <h3>Global Transfers</h3>
+    <p>Send money to 40+ banks across 20+ countries instantly.</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="feature-icon">🔒</span>
+    <h3>Fraud Protection</h3>
+    <p>Real-time monitoring and instant alerts on suspicious activity.</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="feature-icon">⏱️</span>
+    <h3>24/7 Banking</h3>
+    <p>Access your account anytime, anywhere — day or night.</p>
   </div>
 </section>
 
 <!-- Cards Section -->
 <section class="cards-section">
-  <div class="container">
-    <h2>Our Cards</h2>
-    <div class="cards-grid">
-      <div class="card-item">
-        <div class="card-display visa">
-          <h4>CHASE WALLET VISA</h4>
-          <p>•••• •••• •••• 4287</p>
-          <div class="card-footer">
-            <span>CHASE WALLET BANK</span>
-            <span>VISA</span>
-          </div>
-        </div>
-        <p>Enjoy 75,000 bonus points, 5% cashback on travel, and zero foreign transaction fees. Accepted worldwide with top‑tier security.</p>
-        <a href="#" onclick="openModal('register')" class="apply-link">Apply Now &gt;</a>
-      </div>
-      <div class="card-item">
-        <div class="card-display verve">
-          <h4>CHASE WALLET VERVE</h4>
-          <p>•••• •••• •••• 5831</p>
-          <div class="card-footer">
-            <span>CHASE WALLET BANK</span>
-            <span>VERVE</span>
-          </div>
-        </div>
-        <p>Earn up to 50,000 bonus points on everyday purchases. Local/international acceptance, contactless payments, no annual fee first year.</p>
-        <a href="#" onclick="openModal('register')" class="apply-link verve">Apply Now &gt;</a>
-      </div>
-      <div class="card-item">
-        <div class="card-display mastercard">
-          <h4>CHASE WALLET MASTERCARD</h4>
-          <p>•••• •••• •••• 9502</p>
-          <div class="card-footer">
-            <span>CHASE WALLET BANK</span>
-            <span>Mastercard</span>
-          </div>
-        </div>
-        <p>Earn up to 70,000 bonus miles, travel discounts, and purchase protection. Manage your finances with flexibility.</p>
-        <a href="#" onclick="openModal('register')" class="apply-link mastercard">Apply Now &gt;</a>
-      </div>
+  <h2>Our Cards</h2>
+
+  <div class="card-item">
+    <h3>Chase Wallet Bank Visa® Card</h3>
+    <div class="card-display visa">
+      <h4>CHASE WALLET VISA</h4>
+      <p>•••• •••• •••• 4287</p>
+      <p class="card-footer">CHASE WALLET BANK <span>VISA</span></p>
     </div>
+    <p>Enjoy 75,000 bonus points, 5% cashback on travel, and zero foreign transaction fees. Accepted worldwide with top-tier security and fraud protection.</p>
+    <a href="#" onclick="openModal('register')" class="apply-link">Apply Now &gt;</a>
+  </div>
+
+  <div class="card-item">
+    <h3>Chase Wallet Bank Verve® Card</h3>
+    <div class="card-display verve">
+      <h4>CHASE WALLET VERVE</h4>
+      <p>•••• •••• •••• 5831</p>
+      <p class="card-footer">CHASE WALLET BANK <span>VERVE</span></p>
+    </div>
+    <p>Earn up to 50,000 bonus points on everyday purchases. Enjoy local and international acceptance, contactless payments, and zero annual fees for the first year.</p>
+    <a href="#" onclick="openModal('register')" class="apply-link verve">Apply Now &gt;</a>
+  </div>
+
+  <div class="card-item">
+    <h3>Chase Wallet Bank Mastercard®</h3>
+    <div class="card-display mastercard">
+      <h4>CHASE WALLET MASTERCARD</h4>
+      <p>•••• •••• •••• 9502</p>
+      <p class="card-footer">CHASE WALLET BANK <span>Mastercard</span></p>
+    </div>
+    <p>Earn up to 70,000 bonus miles, exclusive travel discounts, and purchase protection. Manage your finances with complete flexibility and global acceptance.</p>
+    <a href="#" onclick="openModal('register')" class="apply-link mastercard">Apply Now &gt;</a>
   </div>
 </section>
 
 <!-- Trust Section -->
 <section class="trust-section">
-  <div class="container">
-    <h2>Why Millions Trust Chase Wallet Bank</h2>
-    <p>We combine the strength of a global bank with modern digital banking — putting you in complete control of your money, 24/7.</p>
-    <div class="trust-badges">
-      <div>FDIC Insured</div>
-      <div>256‑bit Encryption</div>
-      <div>Zero Hidden Fees</div>
-      <div>Member FDIC</div>
-    </div>
+  <h2>Why Millions Trust Chase Wallet Bank</h2>
+  <p class="trust-text">We combine the strength of a global bank with the convenience of modern digital banking — putting you in complete control of your money, 24/7.</p>
+
+  <div class="trust-buttons">
+    <div class="trust-btn">FDIC Insured</div>
+    <div class="trust-btn">256-bit Encryption</div>
+    <div class="trust-btn">Zero Hidden Fees</div>
+    <div class="trust-btn">Member FDIC</div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="main-footer">
-  <div class="container">
-    <p>1200 Financial Boulevard, Los Angeles, CA 90017 • Member FDIC • Equal Housing Lender</p>
-    <p>© 2026 Chase Wallet Bank. All rights reserved.</p>
-  </div>
+<footer class="site-footer">
+  <p>1200 Financial Boulevard, Los Angeles, CA 90017 • Member FDIC • Equal Housing Lender</p>
+  <p>© 2026 Chase Wallet Bank. All rights reserved.</p>
 </footer>
 
 <!-- Login / Register Modal -->
@@ -176,18 +163,18 @@
         <textarea id="resAddress" rows="2" required></textarea>
       </div>
       <div class="form-group">
-        <label>Government ID Type</label>
+        <label>Government Issued ID Type</label>
         <select id="idType" required>
-          <option value="">Select ID</option>
+          <option value="">Select ID Type</option>
           <option value="passport">Passport</option>
           <option value="drivers">Driver’s License</option>
-          <option value="national">National ID</option>
-          <option value="ssn">SSN / Tax ID</option>
+          <option value="national">National ID Card</option>
+          <option value="ssn">Social Security Card</option>
         </select>
       </div>
       <div class="form-group">
         <label>ID Number</label>
-        <input type="text" id="idNumber" required>
+        <input type="text" id="idNumber" placeholder="Enter ID number" required>
       </div>
       <div class="form-group">
         <label>Create Password</label>
@@ -203,6 +190,37 @@
   </div>
 </div>
 
+<!-- Load script at the END of the page so it works -->
 <script src="script.js"></script>
+
+<!-- Fallback inline functions just in case -->
+<script>
+function openModal(type) {
+  const modal = document.getElementById('mainModal');
+  if (!modal) return;
+  modal.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+  if (type === 'login') {
+    document.getElementById('loginForm').style.display = 'block';
+    document.getElementById('registerForm').style.display = 'none';
+  } else {
+    document.getElementById('loginForm').style.display = 'none';
+    document.getElementById('registerForm').style.display = 'block';
+  }
+}
+function closeModal() {
+  const modal = document.getElementById('mainModal');
+  if (!modal) return;
+  modal.style.display = 'none';
+  document.body.style.overflow = 'auto';
+}
+function switchToReg() { openModal('register'); }
+function switchToLogin() { openModal('login'); }
+window.onclick = function(e) {
+  if (e.target === document.getElementById('mainModal')) closeModal();
+}
+</script>
+
 </body>
-</html>
+                                        </html>
+          
